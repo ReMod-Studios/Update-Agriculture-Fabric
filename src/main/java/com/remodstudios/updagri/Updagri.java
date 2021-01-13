@@ -3,9 +3,11 @@ package com.remodstudios.updagri;
 import com.remodstudios.updagri.item.WateringPailItem;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import static net.minecraft.util.registry.Registry.ITEM;
+import static net.minecraft.util.registry.Registry.register;
 
 public class Updagri implements ModInitializer {
 
@@ -16,7 +18,7 @@ public class Updagri implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Hello from Updagri");
-		Registry.register(Registry.ITEM, new Identifier(MODID, "watering_pail"), WATERING_PAIL);
+		LOGGER.info("Initializing Update Agriculture");
+		register(ITEM, new Identifier(MODID, "watering_pail"), WATERING_PAIL);
 	}
 }
